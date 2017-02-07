@@ -1,0 +1,2 @@
+# RssReader
+jQueryを使ったサンプルアプリ
