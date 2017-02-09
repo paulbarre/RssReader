@@ -1,2 +1,5 @@
 # RssReader
-jQueryを使ったサンプルアプリ
+
+jQuery使ったウエブページのチュートリアルは[こちら](https://github.com/paulbarre/RssReader/wiki)。
+
+※未完成

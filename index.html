@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Rss Reader</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/feed.js"></script>
+    <script src="js/favorite.js"></script>
+    <script src="js/api.js"></script>
+</head>
+<body>
+<body>
+    <header>
+        <h1>RSS Reader</h1>
+    </header>
+
+    <section>
+        <h2>メニュー</h2>
+        <article>
+            <h3>気に入り</h3>
+
+            <ul id="favorites-list">
+                <li>フィード1<button>ダウンロード</button></li>
+            </ul>
+
+            <form id="add-favorite-form">
+                <input name="add-favorite-url" type="text" placeholder="URL">
+                <input name="add-favorite-btn" type="submit" value="登録">
+            </form>
+        </article>
+
+        <article>
+            <h3>ブックマーク</h3>
+            <ul>
+                <li><a href="" target="_blank">ブックマーク1</a></li>
+            </ul>
+        </article>
+    </section>
+
+    <section>
+        <header>
+            <h2>一覧</h2>
+        </header>
+
+        <div id="feed-articles"></div>
+    </section>
+
+    <section>
+        <input type="text" placeholder="検索する...">
+    </section>
+</body>
+</html>
