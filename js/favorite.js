@@ -1,17 +1,11 @@
-function storeFavorites(favorites) {
-
-    var value = JSON.stringify(favorites);
-    localStorage.setItem('favorites', value);
-}
-
 function addFavorite(favorite) {
 
-    var favorites = getFavorites();
-    favorites.push(url);
-    storeFavorites(favorites);
+    var favorites = loadStorage('favorites');
+    favorites.push(favorite);
+    saveStorage('favorites', favorites);
 }
 
-function getFavorites() {
+function loadStorage('favorites') {
 
     var value = localStorage.getItem('favorites');
     var favorites = JSON.parse(value);
@@ -25,7 +19,7 @@ function displayFavorites() {
 
     $('#favorites-list').html('');
 
-    var favorites = getFavorites();
+    var favorites = loadStorage('favorites');
     $.each(favorites, function (i, favorite) {
 
         var html = '<li>' + favorite.title + '<button class="download-btn" data-url="' + favorite.url + '">ダウンロード</button></li>';
@@ -56,5 +50,6 @@ function registerFavorite(url) {
         console.log('description: ' + favorite.description);
 
         addFavorite(favorite);
+        displayFavorites();
     });
 }

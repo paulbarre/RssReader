@@ -4,10 +4,10 @@ function storeBookmarks(bookmarks) {
     localStorage.setItem('bookmarks', value);
 }
 
-function addBookmark(url) {
+function addBookmark(bookmark) {
 
     var bookmarks = getBookmarks();
-    bookmarks.push(url);
+    bookmarks.push(bookmark);
     storeBookmarks(bookmarks);
 }
 
@@ -28,22 +28,17 @@ function displayBookmarks() {
     var bookmarks = getBookmarks();
     $.each(bookmarks, function (i, bookmark) {
 
-        var html = '<li><a href=""></a>' + bookmark.title + '</li>';
+        var html = '<li><a href="' + bookmark.url + '">' + bookmark.title + '</a></li>';
         $('#bookmarks-list').append(html);
-    });
-
-    $('.download-btn').on('click', function () {
-
-        var url = $(this).data('url');
-        download(url, displayFeedResults);
     });
 }
 
-function registerBookmark(url, title) {
+function registerBookmark(title, url) {
 
     var bookmark = {
         url: url,
         title: title
     };
     addBookmark(bookmark);
+    displayBookmarks();
 }
