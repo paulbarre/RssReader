@@ -7,7 +7,7 @@ $(document).ready(function () {
     $('#add-favorite-form').on('submit', function (event) {
         event.preventDefault();
         var url = $(this).find('input[name="add-favorite-url"]').val();
-        registerFavorite(url);
+        registerBookmark(url);
     });
 
     displayFavorites();

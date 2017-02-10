@@ -4,7 +4,7 @@ function storeFavorites(favorites) {
     localStorage.setItem('favorites', value);
 }
 
-function addFavorite(url) {
+function addFavorite(favorite) {
 
     var favorites = getFavorites();
     favorites.push(url);
@@ -55,7 +55,6 @@ function registerFavorite(url) {
         console.log('link: ' + favorite.link);
         console.log('description: ' + favorite.description);
 
-        // addFavorite(favorite);
-        // displayFavorites();
+        addFavorite(favorite);
     });
 }
