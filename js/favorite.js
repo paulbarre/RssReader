@@ -31,7 +31,11 @@ function displayFavorites() {
     var favorites = loadStorage('favorites');
     $.each(favorites, function (i, favorite) {
 
-        var html = '<li>' + favorite.title + '<button class="download-btn" data-url="' + favorite.url + '">ダウンロード</button><button class="delete-favorite-btn" data-url="' + favorite.url + '">削除</button></li>';
+        var html =
+            '<li>' + favorite.title +
+            '<button class="download-btn" data-url="' + favorite.url + '"><i class="fa fa-rss"></i></button>' +
+            '<button class="delete-favorite-btn" data-url="' + favorite.url + '"><i class="fa fa-close"></i></button>' +
+            '</li>';
         $('#favorites-list').append(html);
     });
 

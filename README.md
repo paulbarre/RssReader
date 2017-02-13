@@ -14,5 +14,6 @@
 
 - [jQuery]()
 - [Font Awesome]()
+- [Yahoo Query Language (YQL)]()
 
 ※未完成

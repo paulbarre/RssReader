@@ -40,7 +40,7 @@ function displayBookmarks() {
         var html =
             '<li>' +
             '<a href="' + bookmark.url + '" target="_blank">' + bookmark.title + '</a>' +
-            '<button class="delete-bookmark-btn" data-url="' + bookmark.url + '">削除</button>' +
+            '<button class="delete-bookmark-btn" data-url="' + bookmark.url + '"><i class="fa fa-close"></i></button>' +
             '</li>';
         $('#bookmarks-list').append(html);
     });

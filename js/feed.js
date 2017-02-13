@@ -14,7 +14,7 @@ function displayFeedResults(xmlData) {
             '<h3 class="article-title">' + title + '</h3>' +
             '<p class="article-description">' + description + '</p>' +
             '<a href="' + link + '" target="_blank" class="see-article-link">See</a>' +
-            '<button class="save-bookmark-btn">登録</button>' +
+            '<button class="save-bookmark-btn"><i class="fa fa-heart"></i></button>' +
             '</article>';
 
         $('#feed-articles').append(html);
