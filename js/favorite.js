@@ -5,7 +5,16 @@ function addFavorite(favorite) {
     saveStorage('favorites', favorites);
 }
 
-function loadStorage('favorites') {
+function deleteFavorite(url) {
+
+    var favorites = loadStorage('favorites');
+    favorites = favorites.filter(function (favorite) {
+        return favorite.url != url;
+    });
+    saveStorage('favorites', favorites);
+}
+
+function loadStorage(favorites) {
 
     var value = localStorage.getItem('favorites');
     var favorites = JSON.parse(value);
@@ -22,7 +31,7 @@ function displayFavorites() {
     var favorites = loadStorage('favorites');
     $.each(favorites, function (i, favorite) {
 
-        var html = '<li>' + favorite.title + '<button class="download-btn" data-url="' + favorite.url + '">ダウンロード</button></li>';
+        var html = '<li>' + favorite.title + '<button class="download-btn" data-url="' + favorite.url + '">ダウンロード</button><button class="delete-favorite-btn" data-url="' + favorite.url + '">削除</button></li>';
         $('#favorites-list').append(html);
     });
 
@@ -30,6 +39,13 @@ function displayFavorites() {
 
         var url = $(this).data('url');
         download(url, displayFeedResults);
+    });
+
+    $('.delete-favorite-btn').on('click', function () {
+
+        var url = $(this).data('url');
+        deleteFavorite(url);
+        displayFavorites();
     });
 }
 

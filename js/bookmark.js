@@ -28,7 +28,7 @@ function displayBookmarks() {
     var bookmarks = getBookmarks();
     $.each(bookmarks, function (i, bookmark) {
 
-        var html = '<li><a href="' + bookmark.url + '">' + bookmark.title + '</a></li>';
+        var html = '<li><a href="' + bookmark.url + '" target="_blank">' + bookmark.title + '</a></li>';
         $('#bookmarks-list').append(html);
     });
 }
