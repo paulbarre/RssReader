@@ -11,6 +11,15 @@ function addBookmark(bookmark) {
     storeBookmarks(bookmarks);
 }
 
+function deleteBookmark(url) {
+
+    var bookmarks = getBookmarks();
+    bookmarks = bookmarks.filter(function (bookmark) {
+        return bookmark.url != url;
+    });
+    storeBookmarks(bookmarks);
+}
+
 function getBookmarks() {
 
     var value = localStorage.getItem('bookmarks');
@@ -28,8 +37,18 @@ function displayBookmarks() {
     var bookmarks = getBookmarks();
     $.each(bookmarks, function (i, bookmark) {
 
-        var html = '<li><a href="' + bookmark.url + '" target="_blank">' + bookmark.title + '</a></li>';
+        var html =
+            '<li>' +
+            '<a href="' + bookmark.url + '" target="_blank">' + bookmark.title + '</a>' +
+            '<button class="delete-bookmark-btn" data-url="' + bookmark.url + '">削除</button>' +
+            '</li>';
         $('#bookmarks-list').append(html);
+    });
+
+    $('.delete-bookmark-btn').click(function () {
+        var url = $(this).data('url');
+        deleteBookmark(url);
+        displayBookmarks();
     });
 }
 
