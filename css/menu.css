@@ -1,0 +1,16 @@
+#menu {
+    background-color: green;
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: .5s;
+    white-space: nowrap;
+}
+
+#menu.opened {
+    width: 40%;
+}

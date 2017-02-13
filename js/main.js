@@ -12,6 +12,10 @@ $(document).ready(function () {
         filterFeed(word);
     });
 
+    $('.menu-btn').click(function () {
+        $('#menu').toggleClass('opened');
+    });
+
     displayFavorites();
     displayBookmarks();
 });
