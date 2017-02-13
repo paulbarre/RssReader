@@ -12,7 +12,7 @@ function displayFeedResults(xmlData) {
         var html =
             '<article>' +
             '<h3 class="article-title">' + title + '</h3>' +
-            '<p>' + description + '</p>' +
+            '<p class="article-description">' + description + '</p>' +
             '<a href="' + link + '" target="_blank" class="see-article-link">See</a>' +
             '<button class="save-bookmark-btn">登録</button>' +
             '</article>';
@@ -27,4 +27,26 @@ function displayFeedResults(xmlData) {
 
         registerBookmark(title, url);
     });
+}
+
+function filterFeed(word) {
+
+    if (word.length >= 2) {
+
+        $('article').each(function () {
+            var title = $(this).find('.article-title').text().toLowerCase();
+            var titleHasWord = title.indexOf(word.toLowerCase()) >= 0;
+
+            var description = $(this).find('.article-description').text().toLowerCase();
+            var descriptionHasWord = description.indexOf(word.toLowerCase()) >= 0;
+
+            if (titleHasWord || descriptionHasWord) {
+                $(this).removeClass('hidden');
+            } else {
+                $(this).addClass('hidden');
+            }
+        });
+    } else {
+        $('article').removeClass('hidden');
+    }
 }
