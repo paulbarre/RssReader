@@ -6,12 +6,14 @@
 
 チュートリアルは[こちら](https://github.com/paulbarre/RssReader/wiki)。
 
-ウエブページのサンプルは[こちら](https://paulbarre.github.io/RssReader/)。
+ウエブページのサンプルは[こちら]()。
 
 ## Credits
 
 このチュートリアルが下のライブラリーを利用します。
 
-- [jQuery](https://jquery.com/)
-- [Font Awesome](http://fontawesome.io/)
-- [Yahoo Query Language (YQL)](https://developer.yahoo.com/yql/)
+- [jQuery]()
+- [Font Awesome]()
+- [Yahoo Query Language (YQL)]()
+
+※未完成
