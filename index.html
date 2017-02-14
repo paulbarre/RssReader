@@ -18,21 +18,22 @@
     <script src="js/api.js"></script>
 </head>
 <body>
-<body>
     <header id="header">
         <nav>
-            <button class="menu-btn"><i class="fa fa-bars"></i></button>
+            <button class="menu-btn"><i class="fa fa-bars fa-3x"></i></button>
         </nav>
 
         <h1>RSS Reader</h1>
     </header>
 
-    <aside id="menu" class="closed">
-        <nav>
-            <button class="menu-btn"><i class="fa fa-close"></i></button>
-        </nav>
+    <aside id="menu">
+        <header>
+            <nav>
+                <button class="menu-btn"><i class="fa fa-close fa-3x"></i></button>
+            </nav>
 
-        <h2>メニュー</h2>
+            <h2>メニュー</h2>
+        </header>
 
         <article>
             <h3>気に入り</h3>
@@ -53,6 +54,8 @@
     </aside>
 
     <section id="page">
+        <div id="loading" class="hidden"><i class="fa fa-cog fa-spin fa-5x"></i></div>
+
         <header>
             <h2>一覧</h2>
         </header>

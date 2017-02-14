@@ -8,6 +8,7 @@ function getYqlRssUrl(url) {
 function download(url, onSuccess) {
 
     console.log('-- ダウンロード: ' + url);
+    $('#loading').addClass('started');
 
     $.ajax({
         url: getYqlRssUrl(url),
@@ -23,6 +24,10 @@ function download(url, onSuccess) {
 
         error: function() {
             console.log('-- ダウンロードを失敗しました。');
+        },
+
+        complete: function() {
+            $('#loading').removeClass('started');
         }
     });
 }

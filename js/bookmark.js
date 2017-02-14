@@ -39,8 +39,8 @@ function displayBookmarks() {
 
         var html =
             '<li>' +
-            '<a href="' + bookmark.url + '" target="_blank">' + bookmark.title + '</a>' +
             '<button class="delete-bookmark-btn" data-url="' + bookmark.url + '"><i class="fa fa-close"></i></button>' +
+            '<a href="' + bookmark.url + '" target="_blank">' + bookmark.title + '</a>' +
             '</li>';
         $('#bookmarks-list').append(html);
     });
