@@ -43,6 +43,7 @@ function displayFavorites() {
 
         var url = $(this).data('url');
         download(url, displayFeedResults);
+        $('#menu').toggleClass('opened');
     });
 
     $('.delete-favorite-btn').on('click', function () {
