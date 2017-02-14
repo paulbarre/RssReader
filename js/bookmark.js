@@ -1,40 +1,24 @@
-function storeBookmarks(bookmarks) {
-
-    var value = JSON.stringify(bookmarks);
-    localStorage.setItem('bookmarks', value);
-}
-
 function addBookmark(bookmark) {
 
-    var bookmarks = getBookmarks();
+    var bookmarks = loadStorage('bookmarks');
     bookmarks.push(bookmark);
-    storeBookmarks(bookmarks);
+    saveStorage('bookmarks', bookmarks);
 }
 
 function deleteBookmark(url) {
 
-    var bookmarks = getBookmarks();
+    var bookmarks = loadStorage('bookmarks');
     bookmarks = bookmarks.filter(function (bookmark) {
         return bookmark.url != url;
     });
-    storeBookmarks(bookmarks);
-}
-
-function getBookmarks() {
-
-    var value = localStorage.getItem('bookmarks');
-    var bookmarks = JSON.parse(value);
-
-    if (bookmarks == null)
-        bookmarks = [];
-    return bookmarks;
+    saveStorage('bookmarks', bookmarks);
 }
 
 function displayBookmarks() {
 
     $('#bookmarks-list').html('');
 
-    var bookmarks = getBookmarks();
+    var bookmarks = loadStorage('bookmarks');
     $.each(bookmarks, function (i, bookmark) {
 
         var html =

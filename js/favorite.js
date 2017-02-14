@@ -14,16 +14,6 @@ function deleteFavorite(url) {
     saveStorage('favorites', favorites);
 }
 
-function loadStorage(favorites) {
-
-    var value = localStorage.getItem('favorites');
-    var favorites = JSON.parse(value);
-
-    if (favorites == null)
-        favorites = [];
-    return favorites;
-}
-
 function displayFavorites() {
 
     $('#favorites-list').html('');
